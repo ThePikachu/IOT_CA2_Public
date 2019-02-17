@@ -1,6 +1,5 @@
 
-# IOT CA2 Smart Security [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://demihickman.tk/) [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://demihickman.tk/)
-
+# IOT CA2 Smart Security [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://demihickman.tk/) [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://demihickman.tk/) [![HitCount](http://hits.dwyl.io/ThePikachu/IOT_CA2_Public.svg)](http://hits.dwyl.io/ThePikachu/IOT_CA2_Public)
 
 > Project Developed to Secure Rooms using IoT (RFID Card Readers, Live Cams and Many More...) <br/>View the web interface at https://demihickman.tk/
 
