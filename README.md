@@ -10,16 +10,25 @@
 
 ## Table of Contents
 - [Introduction](#introduction)
+- [Fritzing Diagram](#fritzing)
 - [Features](#features)
 - [Libraries](#builtwith)
 - [Setup](#setup)
+- [Bot Setup](#bots)
+- [Demo Video](#video)
 - [Authors](#authors)
 - [Acknowledgments](#ack)
 
+<a name="introduction"></a>
 ## Introduction
 The application, Smart Security, allow the administrator/users to manage their room security, with motion detection and video recording, the administrator can add unlimited amount of rooms provided there is enough hardware. Each hardware has a RFID card reader, to allow access to room, a temperature sensor to monitor the room’s temperature, a LED screen to display room name and messages to user, a motion sensor & camera. Administrator can keep track & allow specific card to access certain rooms, the motion sensor will be disarmed if room is currently being accessed. Upon any irregularity such as motion detected , the application will start a video recording and will be recorded down into a file and it will notify the administrator through telegram with the video.
 
 The web interface will allow the administrator view historial temperature, access history & motion detected recordings.
+
+<a name="fritzing"></a>
+## Fritzing Diagram
+<img src="/Documents/IoT_bb.jpg" alt="Fritzing" width="70%">
+
 
 <a name="features"></a>
 ## Features
@@ -98,7 +107,7 @@ The web interface will allow the administrator view historial temperature, acces
 
 <a name="setup"></a>
 ## Setup
-Run the following commands in your terminal:
+Run the following commands in your terminal:<br/>
 Note: Does not work because this is the public repo with no keys and certs
 ```sh
 # Download this repository
@@ -117,6 +126,26 @@ python server.py
 # View the server locally
 Navigate to localhost:5000
 ```
+<a name="bots"></a>
+## Bot Setup
+### Discord Invite: 
+Link: https://discordapp.com/oauth2/authorize?client_id=545638414267973632&scope=bot&permissions=8
+
+### Whatsapp Invite: 
+Message 'join tight-truck' to +14155238886 to access the Whatsapp Bot
+
+<img src="/Documents/images/whatsapp_invite.jpg" alt="Whatsapp Invite" width="40%">
+
+### Telegram Invite:
+Add @wk_rpi_bot
+
+<img src="/Documents/images/telegram_invite.jpg" alt="Telegram Invite" width="40%">
+
+<a name="video"></a>
+## Demonstration Video
+
+https://www.youtube.com/watch?v=WNt7YkHzFNM&t=705s
+
 <a name="authors"></a>
 ## Authors
 
