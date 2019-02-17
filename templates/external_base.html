@@ -1,0 +1,10 @@
+﻿{% extends "base.html" %}
+{% block head %}
+{{super()}}
+<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
+{% endblock %}
+{% block content %}
+<div id="particles-js"></div>
+<script src="{{url_for('static', filename='js/login.js')}}"></script>
+{% endblock %}

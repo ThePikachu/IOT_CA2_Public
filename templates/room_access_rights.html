@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+
+{% extends "internal_base.html" %}
+{% set title = 'Room Access Rights' %}
+{% block title %}{{ title }}{% endblock %}
+{% block head %}
+{{super()}}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/room_access_rights.js')}}"></script>
+{% endblock %}
+{% block content %}
+<div class="col-md-12">
+    <a id="btnAdd" class="btn btn-primary pull-right">Add New Access Rights <i class="fa fa-plus" aria-hidden="true"></i></a>
+    <br />
+    <table id="AccessRightsTable" class="display">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>User</th>
+                <th>Room Name</th>
+                <th>Manage</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="fillModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Update Access Rights</h4>
+            </div>
+            <div class="modal-body">
+                <form id="accessRightForm">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="sizing-addon2">Id</span>
+                        <input id="Id" type="text" class="form-control" placeholder="Id" name="Id" readonly>
+                    </div>
+                    <br />
+                    <div class="input-group">
+                        <span class="input-group-addon" id="sizing-addon2">User</span>
+                        <select id="UserSelect" class="form-control" name="UserId">
+                            {% for user in users %}
+                            <option value="{{user.Id}}">{{user.Username}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <br />
+                    <div class="input-group">
+                        <span class="input-group-addon" id="sizing-addon2">Room</span>
+                        <select id="RoomSelect" class="form-control" name="RoomId">
+                            {% for room in rooms %}
+                            <option value="{{room.Id}}">{{room.RoomName}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="saveAccessRight" type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Confirmation</h4>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to remove the following access right?
+                <form id="ACRemoveForm">
+                    <input id="ACRemoveId" type="hidden" class="form-control" name="Id">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="sizing-addon2">User</span>
+                        <input id="UsernameR" type="text" class="form-control" placeholder="Username" readonly>
+                    </div>
+                    <br />
+                    <div class="input-group">
+                        <span class="input-group-addon" id="sizing-addon2">IoT Device Name</span>
+                        <input id="RoomNameR" type="text" class="form-control" placeholder="Room Name" readonly>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="removeAccessRight" type="button" class="btn btn-primary">Remove</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+{% endblock %}

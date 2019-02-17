@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+{% extends "internal_base.html" %}
+{% set title = 'Public Dashboard' %}
+{% block title %}{{ title }}{% endblock %}
+{% block head %}
+{{super()}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.2.0/highcharts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/publicdashboard.js')}}"></script>
+<link rel="stylesheet" href="{{url_for('static', filename='css/publicdashboard.css')}}">
+
+{% endblock %}
+{% block content %}
+{% if user.CardId is none %}
+<div id="cardIdWrapper">
+  <div id="warning" class="alert alert-danger" role="alert">
+    Warning: Set your Card ID, or you cannot access any rooms
+  </div>
+  <form id="cardIdForm" class="form-inline">
+    <div class="form-group">
+      <h4>Set Your Card ID Now</h4>
+      <label class="sr-only" for="cardID">Card ID</label>
+      <input type="text" class="form-control" id="cardID" name="cardID" aria-describedby="emailHelp" placeholder="Enter your Card ID">
+      <button id="cardIDbtn" type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>
+{% endif %}
+<div class="row wrapper">
+  <h1>Room Live Cam </h1>
+  {% for room in rooms %}
+  <div class="col-sm-12 col-md-4">
+    <div class="thumbnail">
+      <a href="/w3images/lights.jpg" class="room">
+        <img class="liveImage" alt="{{room.RoomName}} Image" style="width:100%">
+        <div class="caption">
+          <p>{{room.RoomName}}</p>
+          <p class="time"></p>
+          <p class="light"></p>
+          <p class="humidity"></p>
+          <p class="temp"></p>
+        </div>
+      </a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<div class="row wrapper">
+  <div class="col-sm-12">
+    <h1>Your Access Rights</h1>
+    <table id="accessRightsTable" class="display">
+      <thead>
+        <tr>
+          <th>Room Name</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</div>
+<div class="row wrapper">
+  <div class="col-sm-12">
+    <h1>Request Access Rights <button id="requestBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">New Request</button></h1>
+    <table id="requestTable" class="display">
+      <thead>
+        <tr>
+          <th>Room Name</th>
+          <th>Date Requested</th>
+          <th>Approval Status</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Create New Request</h4>
+        <!-- <h5 class="orange">Note: You cannot request a room you already requested</h5> -->
+      </div>
+      <div class="modal-body">
+        <form id="requestForm">
+          <div class="form-group">
+            <label for="room">Room </label>
+            <select class="form-control" id="room" name="room">
+              {% for room in rooms %}
+              <option value={{room.Id}}>{{room.RoomName}}</option>
+              {% endfor %}
+            </select>
+            <!-- <input type="text" class="form-control" id="room" name="room" placeholder="Select Room"> -->
+            <div class="text-right spacingtop">
+              <button id="requestFormBtn" type="submit" class="btn btn-primary right">Request</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+{% endblock %}

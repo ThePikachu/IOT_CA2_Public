@@ -1,0 +1,61 @@
+/* ---- reset ---- */
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #1a222c;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.glyphicon{
+	position:initial;
+}
+
+.panel{
+	position:absolute;
+	top:50%;
+	left:50%;
+	width:300px;
+	margin: -160px 0 0 -150px;
+	z-index:100;
+	padding: 20px 20px 0px 20px;
+	background: #eee;
+	opacity:0.9;
+	-webkit-animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from {
+		opacity: 0;
+		top: 55%;
+	}
+    to {
+		opacity: 0.9;
+		top:50%;
+	}
+}
+
+.panel h1{
+	font-size: 1.8em;
+    font-weight: 700;
+    text-align: center;
+	margin-top:0px;
+}
+
+form .input-group{
+	margin:5px 0px;
+}
+
+form button{
+	width:100%;
+  margin: 15px 0;
+}

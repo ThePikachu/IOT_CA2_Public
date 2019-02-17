@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+{% extends "internal_base.html" %}
+{% set title = 'Manage Access Rights Requests' %}
+{% block title %}{{ title }}{% endblock %}
+{% block head %}
+{{super()}}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/manage_approvals.js')}}"></script>
+{% endblock %}
+{% block content %}
+
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#pending">Pending Requests</a></li>
+  <li><a data-toggle="tab" href="#history">Resolved Requests</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="pending" class="tab-pane fade in active">
+    <div class="col-md-12 spacingtop">
+      <table id="pendingTable" class="display">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Room Name</th>
+            <th>Date Requested</th>
+            <th>Status</th>
+            <th>User ID</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div id="history" class="tab-pane fade">
+    <div class="col-md-12 spacingtop">
+      <table id="resolvedTable" class="display">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Room Name</th>
+            <th>Date Requested</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

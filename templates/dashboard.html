@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+
+{% extends "internal_base.html" %}
+{% set title = 'Dashboard' %}
+{% block title %}{{ title }}{% endblock %}
+{% block head %}
+{{super()}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.2.0/highcharts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/dashboard.js')}}"></script>
+{% endblock %}
+{% block content %}
+<select id="RoomSelect" class="form-control" name="RoomId">
+    {% for room in rooms %}
+    <option value="{{room.Id}}">{{room.RoomName}}</option>
+    {% endfor %}
+</select>
+<div class="col-md-6 col-sm-12">
+    <h4>Current Temperature Recordings</h4>
+    <div id="current_temp"></div>
+</div>
+<div class="col-md-6 col-sm-12">
+    <h4>Average Tempature Readings</h4>
+    <div id="avg_temp_history"></div>
+</div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-sm-12">
+        <h4>Valid Room Access History</h4>
+        <table id="VRATable" class="display">
+            <thead>
+                <tr>
+                    <th>Room Name</th>
+                    <th>User</th>
+                    <th>Enter Time</th>
+                    <th>Exit Time</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <h4>Invalid Room Access History</h4>
+        <table id="IVRATable" class="display">
+            <thead>
+                <tr>
+                    <th>Room Name</th>
+                    <th>User</th>
+                    <th>Tap Time</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+<div class="col-md-6 col-sm-12">
+    <h4>Motion Detection History</h4>
+    <table id="MAHTable" class="display">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Time</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+<div class="modal fade" id="VideoModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Motion Preview</h4>
+            </div>
+            <div class="modal-body">
+                <video id="VideoPreview" src="" type="video/mp4" controls="controls" width="560">
+                </video>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+{% endblock %}
