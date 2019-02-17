@@ -2,7 +2,7 @@
 # IOT CA2 Smart Security [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://demihickman.tk/) [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://demihickman.tk/)
 
 
-> Project Developed to Secure Rooms using IoT (NFC Card Readers, Live Cams and Many More...) <br/>View the web interface at https://demihickman.tk/
+> Project Developed to Secure Rooms using IoT (RFID Card Readers, Live Cams and Many More...) <br/>View the web interface at https://demihickman.tk/
 
 <img src="/Documents/github_images/finalsetup.jpg" alt="Project" width="400">
 <img src="/Documents/github_images/raspberrypi_startup.gif" alt="Raspberry Pi Startup" width="100%">
@@ -14,7 +14,7 @@
 - [Features](#features)
 - [Libraries](#builtwith)
 - [Setup](#setup)
-- [Bot Setup](#bots)
+- [Bot Setup](#bot)
 - [Demo Video](#video)
 - [Step by Step Tutorial](#tutorial)
 - [Authors](#authors)
@@ -79,7 +79,7 @@ The web interface will allow the administrator view historial temperature, acces
 
 ### IOT Libraries
 * [MQTT](https://docs.aws.amazon.com/iot/latest/developerguide/iot-sdks.html) - accessing AWS IoT platform through MQTT
-* [MFRC522](https://github.com/mxgxw/MFRC522-python) - NFC Card Reader
+* [MFRC522](https://github.com/mxgxw/MFRC522-python) - RFID Card Reader
 * [SPI-Py](https://github.com/lthiery/SPI-Py) - sensors
 * [Matrix Creator](https://matrix-io.github.io/matrix-documentation/matrix-core/getting-started/core-installation/) - used for the matrix creator
 
@@ -127,7 +127,8 @@ python server.py
 # View the server locally
 Navigate to localhost:5000
 ```
-<a name="bots"></a>
+
+<a name="bot"></a>
 ## Bot Setup
 ### Discord Invite: 
 Link: https://discordapp.com/oauth2/authorize?client_id=545638414267973632&scope=bot&permissions=8
