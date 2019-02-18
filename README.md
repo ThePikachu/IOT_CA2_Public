@@ -129,10 +129,12 @@ Navigate to localhost:5000
 
 <a name="bot"></a>
 ## Bot Setup
-### Discord Invite: 
+### Discord Invite:
 Link: https://discordapp.com/oauth2/authorize?client_id=545638414267973632&scope=bot&permissions=8
 
-### Whatsapp Invite: 
+<img src="/Documents/images/discord_invite.PNG" alt="Telegram Invite" width="40%">
+
+### Whatsapp Invite:
 Message 'join tight-truck' to +14155238886 to access the Whatsapp Bot
 
 <img src="/Documents/images/whatsapp_invite.jpg" alt="Whatsapp Invite" width="40%">
