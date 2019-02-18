@@ -15,7 +15,7 @@
 - [Setup](#setup)
 - [Bot Setup](#bot)
 - [Demo Video](#video)
-- [Step by Step Tutorial](#tutorial)
+- [Documentation](#tutorial)
 - [Authors](#authors)
 - [Acknowledgments](#ack)
 
@@ -147,7 +147,7 @@ Add @wk_rpi_bot
 * [IoT 2019 CA2 Smart Room Security](https://www.youtube.com/watch?v=WNt7YkHzFNM&t=705s)
 
 <a name="tutorial"></a>
-## Step by Step Tutorial
+## Full Documentation (Including Step by Step Tutorial)
 * [Word Doc](https://github.com/ThePikachu/IOT_CA2_Public/blob/master/Documents/Step%20by%20Step%20Tutorial%20(No%20Keys%20and%20Certs).docx)
 
 <a name="authors"></a>
