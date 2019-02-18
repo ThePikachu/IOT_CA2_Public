@@ -23,7 +23,9 @@
 ## Introduction
 The application, Smart Security, allow the administrator/users to manage their room security, with motion detection and video recording, the administrator can add unlimited amount of rooms provided there is enough hardware. Each hardware has a RFID card reader, to allow access to room, a temperature sensor to monitor the room’s temperature, a LED screen to display room name and messages to user, a motion sensor & camera. Administrator can keep track & allow specific card to access certain rooms, the motion sensor will be disarmed if room is currently being accessed. Upon any irregularity such as motion detected , the application will start a video recording and will be recorded down into a file and it will notify the administrator through telegram with the video.
 
-The web interface will allow the administrator view historial temperature, access history & motion detected recordings.
+The **admin web interface** will allow the administrator view historial temperature, access history & motion detected recordings. Also, they can manage each room and view access rights requests of users as well as approve/reject them
+
+The **user web interface** will allow users to view live feed of the iot sensor data and, request for a RFID card reader and request for access rights to the rooms for their RFID card reader.
 
 <a name="fritzing"></a>
 ## Fritzing Diagram
