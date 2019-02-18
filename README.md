@@ -65,7 +65,7 @@ The **user web interface** will allow users to view live feed of the iot sensor 
 ### Bot Features
 * Features a discord bot that can be added to any server to let people know which rooms are currently available
 * Features a whatsapp bot that can be messaged to know which rooms are currently available
-* Features a telegram bot to insert stuff here
+* Features a telegram bot that can be messaged to know which rooms are currently available
 
 <a name="builtwith"></a>
 ## Libraries
